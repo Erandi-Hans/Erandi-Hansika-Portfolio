@@ -8,9 +8,9 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
 
                 {/* 1. Personal Info Card with Image */}
-                <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 space-y-6 backdrop-blur-sm shadow-xl lg:col-span-1">
+                <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-12 space-y-6 backdrop-blur-sm shadow-xl lg:col-span-1">
 
-                    <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto overflow-hidden rounded-full border border-zinc-800">
+                    <div className="relative w-42 h-42 md:w-50 md:h-50 mx-auto overflow-hidden rounded-full border border-zinc-800">
                         <Image
                             src="/img/pi1.jpeg"
                             alt="G.M. Erandi Hansika"
@@ -92,7 +92,7 @@ export default function About() {
                 </div>
 
                 {/* 2. Main About Me Description */}
-                <div className="lg:col-span-2 space-y-6 pl-0 lg:pl-6">
+                <div className="lg:col-span-2 space-y-6 pl-0 lg:pl-6 p-35">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">About Me</h2>
 
                     <p className="text-zinc-400 text-lg leading-relaxed">

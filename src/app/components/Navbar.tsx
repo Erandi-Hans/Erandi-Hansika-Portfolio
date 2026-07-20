@@ -5,9 +5,9 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-zinc-800">
             <div className="w-full max-w-[1600px] mx-auto px-6 h-16 flex items-center justify-between">
                 <Link href="/" className="text-xl font-bold tracking-tight text-white">
-                    Erandi.dev
+                    Erandi Hansika
                 </Link>
-                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <div className="hidden md:flex items-center gap-8 text-lg font-medium text-zinc-400">
                     <Link href="#about" className="hover:text-white transition">About</Link>
                     <Link href="#experience" className="hover:text-white transition">Experience</Link>
                     <Link href="#projects" className="hover:text-white transition">Projects</Link>
