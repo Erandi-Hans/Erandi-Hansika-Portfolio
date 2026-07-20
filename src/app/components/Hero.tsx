@@ -1,12 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code, Briefcase, BookOpen, FileText, Mail, Sparkles } from 'lucide-react';
+import { FileText, Sparkles, Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
 
 const images = ["/img/p1 (2).jpeg", "/img/p2.jpeg", "/img/p3.jpeg", "/img/p5.jpeg"];
 
 const techStacks = [
-    "HTML", "CSS", "JavaScript", "TypeScript", "C#", , "Python", "SQL Server",
+    "HTML", "CSS", "JavaScript", "TypeScript", "C#", "Python", "SQL Server",
     "React.js", "MERN Stack (Node.js, Express.js, MongoDB)", "Next.js", ".NET Core", "Tailwind CSS"
 ];
 
@@ -46,18 +47,18 @@ export default function Hero() {
                     ))}
                 </div>
 
-                {/* Social Links */}
+                {/* Social Links with Original Brand Colors on Hover */}
                 <div className="flex gap-4 pt-2">
-                    <a href="https://github.com/Erandi-Hans" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 hover:border-zinc-700 transition">
-                        <Code size={20} />
+                    <a href="https://github.com/Erandi-Hans" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-white hover:border-[#333] hover:bg-[#333]/20 transition">
+                        <FaGithub size={20} />
                     </a>
-                    <a href="https://www.linkedin.com/in/erandi-hansika-a286ab225" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 hover:border-zinc-700 transition">
-                        <Briefcase size={20} />
+                    <a href="https://www.linkedin.com/in/erandi-hansika-a286ab225" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-[#0a66c2] hover:border-[#0a66c2]/50 hover:bg-[#0a66c2]/10 transition">
+                        <FaLinkedin size={20} />
                     </a>
-                    <a href="https://medium.com/@erandi2287hansika" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 hover:border-zinc-700 transition">
-                        <BookOpen size={20} />
+                    <a href="https://medium.com/@erandi2287hansika" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-white hover:border-white hover:bg-white/10 transition">
+                        <FaMedium size={20} />
                     </a>
-                    <a href="mailto:erandi2287hansika@gmail.com" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full hover:bg-zinc-800 hover:border-zinc-700 transition">
+                    <a href="mailto:erandi2287hansika@gmail.com" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-red-400 hover:border-red-400/50 hover:bg-red-400/10 transition">
                         <Mail size={20} />
                     </a>
                 </div>
