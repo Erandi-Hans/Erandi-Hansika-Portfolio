@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Navbar() {
     return (
         <nav className="sticky top-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-zinc-800">
-            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div className="w-full max-w-[1600px] mx-auto px-6 h-16 flex items-center justify-between">
                 <Link href="/" className="text-xl font-bold tracking-tight text-white">
                     Erandi.dev
                 </Link>
