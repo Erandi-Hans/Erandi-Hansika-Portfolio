@@ -10,7 +10,7 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-8 text-lg font-medium text-zinc-400">
                     <Link href="#about" className="hover:text-white transition">About</Link>
                     <Link href="#skills" className="hover:text-white transition">Technical Skills</Link>
-                    <Link href="#experience" className="hover:text-white transition">Experience</Link>
+                    <Link href="#experience" className="hover:text-white transition">Experience & Involvement</Link>
                     <Link href="#projects" className="hover:text-white transition">Projects</Link>
                     <Link href="#contact" className="hover:text-white transition">Contact</Link>
                 </div>
