@@ -8,9 +8,9 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
 
                 {/* 1. Personal Info Card with Image */}
-                <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-12 space-y-6 backdrop-blur-sm shadow-xl lg:col-span-1">
+                <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-8 space-y-6 backdrop-blur-sm shadow-xl lg:col-span-1">
 
-                    <div className="relative w-42 h-42 md:w-50 md:h-50 mx-auto overflow-hidden rounded-full border border-zinc-800">
+                    <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto overflow-hidden rounded-full border border-zinc-800">
                         <Image
                             src="/img/pi1.jpeg"
                             alt="G.M. Erandi Hansika"
@@ -79,7 +79,6 @@ export default function About() {
                             <a href="https://medium.com/@erandi2287hansika" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-white hover:border-white hover:bg-white/10 transition">
                                 <FaMedium size={20} />
                             </a>
-
                         </div>
 
                         {/* CV Button */}
@@ -92,21 +91,21 @@ export default function About() {
                 </div>
 
                 {/* 2. Main About Me Description */}
-                <div className="lg:col-span-2 space-y-6 pl-0 lg:pl-6 p-35">
+                <div className="lg:col-span-2 space-y-6 pl-0 lg:pl-6 p-25">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">About Me</h2>
 
                     <p className="text-zinc-400 text-lg leading-relaxed">
-                        I am an undergraduate reading for a Bachelor of Information and Communication Technology (BICT) degree at the University of Vavuniya. My primary focus revolves around Semantic Computing, Natural Language Processing (NLP), and building scalable full-stack applications using modern architectures.
+                        I am an undergraduate reading for a Bachelor of Information and Communication Technology (BICT) degree at the University of Vavuniya. As a passionate <strong className="text-white">Full-Stack Software Engineer</strong>, I specialize in building modern, scalable web applications using technologies like <strong className="text-white">React.js, Next.js, MERN Stack </strong>and <strong className="text-white">.NET Core</strong>.
                     </p>
 
                     <p className="text-zinc-400 text-lg leading-relaxed">
-                        Alongside my academic and research journey at the IYKONS Industry Research Park, I actively participate in university committees, leadership initiatives, and collaborative software development.
+                        My expertise extends into Semantic Computing and Natural Language Processing (NLP). Alongside my academic and research journey at the IYKONS Industry Research Park, I actively develop full-stack solutions, bridge language with computation, and engage in collaborative software development.
                     </p>
 
                     <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="p-4 bg-zinc-900/40 border border-zinc-800 rounded-xl">
-                            <h4 className="text-white font-semibold mb-1">University</h4>
-                            <p className="text-sm text-zinc-400">University of Vavuniya</p>
+                            <h4 className="text-white font-semibold mb-1">Core Tech Stack</h4>
+                            <p className="text-sm text-zinc-400">React.js, Next.js, MERN, .NET Core</p>
                         </div>
                         <div className="p-4 bg-zinc-900/40 border border-zinc-800 rounded-xl">
                             <h4 className="text-white font-semibold mb-1">Research Focus</h4>
