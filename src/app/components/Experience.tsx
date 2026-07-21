@@ -39,7 +39,7 @@ export default function Experience() {
 
     return (
         <a href="experience">
-            <section id="experience" className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 scroll-mt-36">
+            <section id="experience" className="w-full max-w-[1600px] pt-20 mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 scroll-mt-36">
                 <div className="space-y-10">
 
                     {/* Section Title */}
