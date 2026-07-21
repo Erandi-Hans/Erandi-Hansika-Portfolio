@@ -1,9 +1,42 @@
+'use client';
+import { useState, useEffect } from 'react';
 import { Briefcase, GitPullRequest, Users } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Experience() {
+    // Image lists based on your folder structure
+    const iykonsImages = ['/img/iycons/i1.jpg', '/img/iycons/i2.jpg', '/img/iycons/i3.jpg', '/img/iycons/i4.jpg', '/img/iycons/i5.jpg'];
+    const labImages = ['/img/lab/lab1.jpg', '/img/lab/lab2.jpg', '/img/lab/lab3.jpg', '/img/lab/lab4.jpg', '/img/lab/lab5.jpg'];
+    const bsImages = ['/img/BS/b1.jpeg', '/img/BS/b2.jpeg', '/img/BS/b3.jpeg', '/img/BS/b4.jpeg', '/img/BS/b5.jpeg', '/img/BS/b6.jpeg'];
+
+    // State for moving/sliding images with independent timelines
+    const [iykonsIndex, setIykonsIndex] = useState(0);
+    const [labIndex, setLabIndex] = useState(0);
+    const [bsIndex, setBsIndex] = useState(0);
+
+    // Independent timers to prevent all images sliding at the exact same time
+    useEffect(() => {
+        const timer1 = setInterval(() => {
+            setIykonsIndex((prev) => (prev + 1) % iykonsImages.length);
+        }, 4500);
+
+        const timer2 = setInterval(() => {
+            setLabIndex((prev) => (prev + 1) % labImages.length);
+        }, 6000);
+
+        const timer3 = setInterval(() => {
+            setBsIndex((prev) => (prev + 1) % bsImages.length);
+        }, 5200);
+
+        return () => {
+            clearInterval(timer1);
+            clearInterval(timer2);
+            clearInterval(timer3);
+        };
+    }, [iykonsImages.length, labImages.length, bsImages.length]);
+
     return (
-        <section id="experience" className="h-screen w-full max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 scroll-mt-28">
+        <section id="experience" className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 scroll-mt-36">
             <div className="space-y-10">
 
                 {/* Section Title */}
@@ -18,38 +51,44 @@ export default function Experience() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
                     {/* 1. Research & Professional Experience */}
-                    <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
+                    <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
                         <div className="space-y-6">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-2xl bg-indigo-950/40 border border-indigo-800/40 flex items-center justify-center text-indigo-400">
-                                        <Briefcase size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white">Experience & Research</h3>
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-indigo-950/40 border border-indigo-800/40 flex items-center justify-center text-indigo-400 shrink-0">
+                                    <Briefcase size={24} />
                                 </div>
+                                <h3 className="text-xl font-bold text-white">Experience & Research</h3>
                             </div>
 
                             <div className="space-y-6">
                                 {/* Item 1: IYKONS */}
-                                <div className="flex items-start gap-4 p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl">
-                                    <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 shrink-0 border border-zinc-700">
-                                        {/* මෙතැනට IYKONS logo එකේ පින්තූරය දාන්න (public/img/iykons.png වගේ) */}
-                                        <Image src="/img/iykons.png" alt="IYKONS" fill className="object-cover" />
+                                <div className="flex flex-col p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl gap-4">
+                                    <div className="relative w-full h-60 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700/80 shadow-md">
+                                        <Image
+                                            src={iykonsImages[iykonsIndex]}
+                                            alt="IYKONS Research"
+                                            fill
+                                            className="object-cover transition-all duration-700 ease-in-out hover:scale-105"
+                                        />
                                     </div>
-                                    <div className="space-y-1">
+                                    <div className="space-y-1.5 w-full">
                                         <h4 className="text-white font-semibold text-base">Undergraduate Researcher</h4>
                                         <p className="text-xs text-indigo-400 font-medium">IYKONS Industry Research Park</p>
                                         <p className="text-xs text-zinc-400 leading-relaxed pt-1">Focusing on Semantic Computing and NLP to bridge academia and industry.</p>
                                     </div>
                                 </div>
 
-                                {/* Item 2: University of Vavuniya */}
-                                <div className="flex items-start gap-4 p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl">
-                                    <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 shrink-0 border border-zinc-700">
-                                        {/* මෙතැනට University logo එකේ පින්තූරය දාන්න */}
-                                        <Image src="/img/uni-logo.png" alt="University of Vavuniya" fill className="object-cover" />
+                                {/* Item 2: Lab Assistant */}
+                                <div className="flex flex-col p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl gap-4">
+                                    <div className="relative w-full h-60 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700/80 shadow-md">
+                                        <Image
+                                            src={labImages[labIndex]}
+                                            alt="Lab Assistant"
+                                            fill
+                                            className="object-cover transition-all duration-700 ease-in-out hover:scale-105"
+                                        />
                                     </div>
-                                    <div className="space-y-1">
+                                    <div className="space-y-1.5 w-full">
                                         <h4 className="text-white font-semibold text-base">Lab Assistant</h4>
                                         <p className="text-xs text-indigo-400 font-medium">University of Vavuniya</p>
                                         <p className="text-xs text-zinc-400 leading-relaxed pt-1">Assisted in managing laboratory sessions and guiding students technically.</p>
@@ -59,11 +98,41 @@ export default function Experience() {
                         </div>
                     </div>
 
-                    {/* 2. Open Source & Contributions */}
-                    <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
+                    {/* 3. Leadership & Extracurricular */}
+                    <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
                         <div className="space-y-6">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-emerald-950/40 border border-emerald-800/40 flex items-center justify-center text-emerald-400">
+                                <div className="w-12 h-12 rounded-2xl bg-amber-950/40 border border-amber-800/40 flex items-center justify-center text-amber-400 shrink-0">
+                                    <Users size={24} />
+                                </div>
+                                <h3 className="text-xl font-bold text-white">Leadership & Community</h3>
+                            </div>
+
+                            <div className="p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl space-y-4">
+                                <div className="relative w-full h-60 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700/80 shadow-md">
+                                    <Image
+                                        src={bsImages[bsIndex]}
+                                        alt="Buddhist Society"
+                                        fill
+                                        className="object-cover transition-all duration-700 ease-in-out hover:scale-105"
+                                    />
+                                </div>
+                                <div className="space-y-1.5 w-full">
+                                    <h4 className="text-white font-semibold text-base">Active Member</h4>
+                                    <p className="text-xs text-amber-400 font-medium">University Buddhist Society</p>
+                                    <p className="text-xs text-zinc-400 leading-relaxed pt-1">
+                                        Collaborated in organizing events, volunteering, and fostering community values.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 2. Open Source & Contributions */}
+                    <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-2xl bg-emerald-950/40 border border-emerald-800/40 flex items-center justify-center text-emerald-400 shrink-0">
                                     <GitPullRequest size={24} />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Open Source</h3>
@@ -72,7 +141,6 @@ export default function Experience() {
                             <div className="p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl space-y-3">
                                 <div className="flex items-center gap-3">
                                     <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-zinc-800 shrink-0 border border-zinc-700">
-                                        {/* මෙතැනට GitHub ලාංඡනය හෝ වෙනත් ප්‍රොජෙක්ට් අයිකන් එකක් දාන්න */}
                                         <Image src="/img/github-icon.png" alt="GitHub" fill className="object-cover" />
                                     </div>
                                     <div>
@@ -81,35 +149,7 @@ export default function Experience() {
                                     </div>
                                 </div>
                                 <p className="text-xs text-zinc-400 leading-relaxed">
-                                    Successfully submitted a Pull Request (PR) resolving [mention what you fixed/added briefly here].
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* 3. Leadership & Extracurricular */}
-                    <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-amber-950/40 border border-amber-800/40 flex items-center justify-center text-amber-400">
-                                    <Users size={24} />
-                                </div>
-                                <h3 className="text-xl font-bold text-white">Leadership & Community</h3>
-                            </div>
-
-                            <div className="p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl space-y-3">
-                                <div className="flex items-center gap-3">
-                                    <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-zinc-800 shrink-0 border border-zinc-700">
-                                        {/* මෙතැනට Buddhist Society ලාංඡනය හෝ අදාළ පින්තූරයක් දාන්න */}
-                                        <Image src="/img/buddhist-soc.png" alt="Buddhist Society" fill className="object-cover" />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-white font-semibold text-sm">Active Member</h4>
-                                        <p className="text-xs text-amber-400 font-medium">University Buddhist Society</p>
-                                    </div>
-                                </div>
-                                <p className="text-xs text-zinc-400 leading-relaxed">
-                                    Collaborated in organizing events, volunteering, and fostering community values.
+                                    Successfully submitted a Pull Request (PR) resolving issue contributions.
                                 </p>
                             </div>
                         </div>
