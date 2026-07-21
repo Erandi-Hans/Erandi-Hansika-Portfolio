@@ -56,8 +56,10 @@ export default function Experience() {
                     <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
                         <div className="space-y-6">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-indigo-950/40 border border-indigo-800/40 flex items-center justify-center text-indigo-400 shrink-0">
-                                    <Briefcase size={24} />
+
+
+                                <div className="w-12 h-12 rounded-2xl bg-cyan-950/40 border border-cyan-800/40 flex items-center justify-center text-cyan-300 shrink-0">
+                                    <Briefcase size={24} stroke="#67e8f9" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Experience & Volunteering</h3>
                             </div>
@@ -75,7 +77,7 @@ export default function Experience() {
                                     </div>
                                     <div className="space-y-1.5 w-full">
                                         <h4 className="text-white font-semibold text-base">Undergraduate Researcher</h4>
-                                        <p className="text-xs text-indigo-300 font-medium">IYKONS Industry Research Park</p>
+                                        <p className="text-xs text-cyan-300 font-medium">IYKONS Industry Research Park</p>
                                         <p className="text-xs text-zinc-400 leading-relaxed pt-1">Focusing on Semantic Computing and NLP to bridge academia and industry.</p>
                                     </div>
                                 </div>
@@ -92,7 +94,7 @@ export default function Experience() {
                                     </div>
                                     <div className="space-y-1.5 w-full">
                                         <h4 className="text-white font-semibold text-base">Lab Assistant</h4>
-                                        <p className="text-xs text-indigo-400 font-medium">University of Vavuniya</p>
+                                        <p className="text-xs text-cyan-300 font-medium">University of Vavuniya</p>
                                         <p className="text-xs text-zinc-400 leading-relaxed pt-1">Assisted in managing laboratory sessions and guiding students technically.</p>
                                     </div>
                                 </div>
@@ -172,7 +174,7 @@ export default function Experience() {
                                     </div>
                                     <div className="space-y-1.5 w-full">
                                         <h4 className="text-white font-semibold text-base">Open Source Contributor</h4>
-                                        <p className="text-xs text-amber-400 font-medium">Social Summer of Code (SSoC)</p>
+                                        <p className="text-xs text-emerald-400 font-medium">Social Summer of Code (SSoC)</p>
                                         <p className="text-xs text-zinc-400 leading-relaxed pt-1">
                                             Contributed to open-source repositories and successfully merged pull requests during SSoC Season 5.
                                         </p>
