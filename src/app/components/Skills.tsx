@@ -3,7 +3,7 @@ import { Code2, Server, Database, Brain, Wrench, ShieldCheck, Layers } from 'luc
 export default function Skills() {
     return (
         <a href='skills'>
-            <section id="skills" className=" py-24 w-full max-w-[1600px] mx-auto px-10 md:px-12 py-12 border-t border-zinc-800/60">
+            <section id="skills" className=" py-24 w-full max-w-[1600px] mx-auto px-10 md:px-12  border-t border-zinc-800/60">
                 <div className="space-y-8">
 
                     {/* Section Title */}

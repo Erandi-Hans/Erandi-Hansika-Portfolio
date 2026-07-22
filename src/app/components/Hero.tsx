@@ -21,7 +21,7 @@ export default function Hero() {
         return () => clearInterval(timer);
     }, []);
     return (
-        <section className="w-full max-w-[1600px] pb-12 mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-[85vh] pb-24">
+        <section className="w-full max-w-[1600px] py-32 mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-[85vh] pb-24">
             {/* Text Content */}
             <div className="space-y-6">
 
