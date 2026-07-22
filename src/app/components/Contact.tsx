@@ -15,19 +15,31 @@ export default function Contact() {
         setErrorMessage('');
 
         if (formRef.current) {
-            emailjs.sendForm(
-                'service_r0gteng',      // Service ID
-                'template_ipp26e6',     // මෙතැනට ඔබේ EmailJS Template ID එක දාන්න (උදා: template_abc123)
+            //  (Notification to you)
+            const sendNotification = emailjs.sendForm(
+                'service_r0gteng',
+                'template_ipp26e6', // මෙන්න මෙතැනට ඔයාගේ Contact Us/Notification Template ID එක දාලා තියෙන්නේ
                 formRef.current,
-                '298bmylPAcVcmVYRC'     // Public Key එක මෙහි ඇතුළත් කර ඇත
-            )
-                .then((result) => {
+                '298bmylPAcVcmVYRC'
+            );
+
+            // 2. මැසේජ් එක දැමූ කෙනාට Auto-reply එක යැවීමට (Auto-reply to user)
+            const sendAutoReply = emailjs.sendForm(
+                'service_r0gteng',
+                'template_xfxrl79', // TODO: ඔයාගේ Auto-Reply Template එකේ ID එක මෙතැනට දාන්න!
+                formRef.current,
+                '298bmylPAcVcmVYRC'
+            );
+
+            Promise.all([sendNotification, sendAutoReply])
+                .then(() => {
                     setIsSubmitted(true);
                     setIsLoading(false);
                     if (formRef.current) formRef.current.reset();
                     setTimeout(() => setIsSubmitted(false), 5000);
-                }, (error) => {
-                    console.log(error.text);
+                })
+                .catch((error) => {
+                    console.log(error);
                     setIsLoading(false);
                     setErrorMessage('Failed to send message. Please try again later.');
                 });
