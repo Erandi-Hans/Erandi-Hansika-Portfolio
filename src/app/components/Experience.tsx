@@ -51,7 +51,7 @@ export default function Experience() {
                     </div>
 
                     {/* 3 Categories Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-24">
 
                         {/* 1. Research & Professional Experience */}
                         <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
