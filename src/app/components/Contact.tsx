@@ -18,15 +18,15 @@ export default function Contact() {
             //  (Notification to you)
             const sendNotification = emailjs.sendForm(
                 'service_r0gteng',
-                'template_ipp26e6', // මෙන්න මෙතැනට ඔයාගේ Contact Us/Notification Template ID එක දාලා තියෙන්නේ
+                'template_ipp26e6',
                 formRef.current,
                 '298bmylPAcVcmVYRC'
             );
 
-            // 2. මැසේජ් එක දැමූ කෙනාට Auto-reply එක යැවීමට (Auto-reply to user)
+            //  (Auto-reply to user)
             const sendAutoReply = emailjs.sendForm(
                 'service_r0gteng',
-                'template_xfxrl79', // TODO: ඔයාගේ Auto-Reply Template එකේ ID එක මෙතැනට දාන්න!
+                'template_xfxrl79',
                 formRef.current,
                 '298bmylPAcVcmVYRC'
             );
@@ -47,6 +47,7 @@ export default function Contact() {
     };
 
     return (
+
         <section id="contact" className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 scroll-mt-36">
             <div className="space-y-12">
 
@@ -206,5 +207,6 @@ export default function Contact() {
                 </div>
             </div>
         </section>
+
     );
 }
