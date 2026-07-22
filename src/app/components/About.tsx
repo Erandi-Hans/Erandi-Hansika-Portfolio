@@ -5,7 +5,7 @@ import { FaWhatsapp, FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
 export default function About() {
     return (
         <a href="#about">
-            <section id="about" className="w-full h-screen max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 flex items-center pt-12">
+            <section id="about" className="w-full h-screen max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 flex items-center pt-24">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
 
                     {/* 1. Personal Info Card with Image */}

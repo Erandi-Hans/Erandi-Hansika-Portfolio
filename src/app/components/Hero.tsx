@@ -48,7 +48,7 @@ export default function Hero() {
 
                 {/* Social Links with Original Brand Colors on Hover */}
 
-                <div className="gap-4 pt-2 flex ">
+                <div className="gap-4 pt-2 flex pb-12">
                     <a href="https://github.com/Erandi-Hans" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-white hover:border-[#333] hover:bg-[#333]/20 transition">
                         <FaGithub size={20} />
                     </a>
