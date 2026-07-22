@@ -103,38 +103,6 @@ export default function Experience() {
                             </div>
                         </div>
 
-                        {/* 3. Leadership & Extracurricular */}
-                        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-2xl bg-amber-950/40 border border-amber-800/40 flex items-center justify-center text-amber-400 shrink-0">
-                                        <Users size={24} />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white">Leadership & Community</h3>
-                                </div>
-
-                                <div className="space-y-6">
-                                    <div className="p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl space-y-4">
-                                        <div className="relative w-full h-80 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700/80 shadow-md">
-                                            <Image
-                                                src={bsImages[bsIndex]}
-                                                alt="Buddhist Society"
-                                                fill
-                                                className="object-cover transition-all duration-700 ease-in-out hover:scale-105"
-                                            />
-                                        </div>
-                                        <div className="space-y-1.5 w-full">
-                                            <h4 className="text-white font-semibold text-base">Active Member</h4>
-                                            <p className="text-xs text-amber-400 font-medium">University Buddhist Society</p>
-                                            <p className="text-xs text-zinc-400 leading-relaxed pt-1">
-                                                Collaborated in organizing events, volunteering, and fostering community values.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                         {/* 2. Open Source & Contributions */}
                         <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
                             <div className="space-y-6">
@@ -184,6 +152,40 @@ export default function Experience() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* 3. Leadership & Extracurricular */}
+                        <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 lg:p-8 space-y-6 backdrop-blur-sm shadow-xl flex flex-col justify-between">
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 rounded-2xl bg-amber-950/40 border border-amber-800/40 flex items-center justify-center text-amber-400 shrink-0">
+                                        <Users size={24} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white">Leadership & Community</h3>
+                                </div>
+
+                                <div className="space-y-6">
+                                    <div className="p-4 bg-zinc-900/80 border border-zinc-800/80 rounded-2xl space-y-4">
+                                        <div className="relative w-full h-80 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700/80 shadow-md">
+                                            <Image
+                                                src={bsImages[bsIndex]}
+                                                alt="Buddhist Society"
+                                                fill
+                                                className="object-cover transition-all duration-700 ease-in-out hover:scale-105"
+                                            />
+                                        </div>
+                                        <div className="space-y-1.5 w-full">
+                                            <h4 className="text-white font-semibold text-base">Active Member</h4>
+                                            <p className="text-xs text-amber-400 font-medium">University Buddhist Society</p>
+                                            <p className="text-xs text-zinc-400 leading-relaxed pt-1">
+                                                Collaborated in organizing events, volunteering, and fostering community values.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
                 </div>
