@@ -43,7 +43,7 @@ export default function Experience() {
                 <div className="space-y-10">
 
                     {/* Section Title */}
-                    <div className="space-y-3 max-w-3xl">
+                    <div className="space-y-3 max-w-3xl pt-">
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Experience & Volunteering</h2>
                         <p className="text-zinc-400 text-lg leading-relaxed">
                             A look into my professional journey, academic research, open-source contributions, and community leadership.
