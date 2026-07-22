@@ -21,24 +21,24 @@ export default function Hero() {
         return () => clearInterval(timer);
     }, []);
     return (
-        <section className="w-full max-w-[1600px] py-32 mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-[85vh] pb-24">
+        <section className="w-full max-w-[1600px] py-16 md:py-32 mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center min-h-[85vh] pb-24">
             {/* Text Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 text-left">
 
                 {/* Role Badge */}
-                <div className="flex items-center justify-center items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs md:text-sm font-medium shadow-inner">
-                    <Sparkles size={14} className="text-amber-400" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs md:text-sm font-medium shadow-inner">
+                    <Sparkles size={14} className="text-amber-400 shrink-0" />
                     <span>Full-Stack Software Engineer & NLP Researcher</span>
                 </div>
 
-                <h1 className="flex items-center justify-center text-5xl md:text-7xl font-extrabold tracking-tight">G.M.E. Hansika</h1>
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight">G.M.E. Hansika</h1>
 
-                <p className="flex items-center justify-center text-zinc-400 text-lg md:text-xl leading-relaxed">
+                <p className="text-zinc-400 text-base md:text-xl leading-relaxed">
                     BICT Undergraduate at University of Vavuniya. Bridging language and computation through intelligent architectures and modern web technologies.
                 </p>
 
                 {/* Tech Stack Badges */}
-                <div className="flex flex-wrap gap-2 pt-1 ">
+                <div className="flex flex-wrap gap-2 pt-1">
                     {techStacks.map((tech, i) => (
                         <span key={i} className="px-3 py-1 bg-zinc-900/80 border border-zinc-800/80 rounded-md text-xs font-mono text-zinc-300">
                             {tech}
@@ -48,7 +48,7 @@ export default function Hero() {
 
                 {/* Social Links with Original Brand Colors on Hover */}
 
-                <div className="gap-4 pt-2 flex ">
+                <div className="gap-4 pt-2 flex">
                     <a href="https://github.com/Erandi-Hans" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-white hover:border-[#333] hover:bg-[#333]/20 transition">
                         <FaGithub size={20} />
                     </a>
@@ -73,7 +73,7 @@ export default function Hero() {
 
 
             {/* Carousel Image */}
-            <div className="relative w-full aspect-square max-w-xl mx-auto overflow-hidden rounded-full border border-zinc-800 shadow-2xl bg-zinc-900">
+            <div className="relative w-full aspect-square max-w-[280px] sm:max-w-sm md:max-w-xl mx-auto overflow-hidden rounded-full border border-zinc-800 shadow-2xl bg-zinc-900">
                 <AnimatePresence mode="wait">
                     <motion.img
                         key={images[index]}

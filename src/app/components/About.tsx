@@ -5,11 +5,11 @@ import { FaWhatsapp, FaGithub, FaLinkedin, FaMedium } from 'react-icons/fa';
 export default function About() {
     return (
 
-        <section id="about" className="w-full h-screen max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 flex items-center pt-36">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <section id="about" className="w-full min-h-screen max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 flex items-center pt-24 md:pt-36">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start w-full">
 
                 {/* 1. Personal Info Card with Image */}
-                <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-8 space-y-6 backdrop-blur-sm shadow-xl lg:col-span-1">
+                <div className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 space-y-6 backdrop-blur-sm shadow-xl lg:col-span-1">
 
                     <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto overflow-hidden rounded-full border border-zinc-800">
                         <Image
@@ -92,14 +92,14 @@ export default function About() {
                 </div>
 
                 {/* 2. Main About Me Description */}
-                <div className="lg:col-span-2 space-y-6 pl-0 lg:pl-6 p-25">
+                <div className="lg:col-span-2 space-y-6 pl-0 lg:pl-6 p-0 sm:p-4 lg:p-0">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">About Me</h2>
 
-                    <p className="text-zinc-400 text-lg leading-relaxed">
+                    <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                         I am an undergraduate reading for a Bachelor of Information and Communication Technology (BICT) degree at the University of Vavuniya. As a passionate <strong className="text-white">Full-Stack Software Engineer</strong>, I specialize in building modern, scalable web applications using technologies like <strong className="text-white">React.js, Next.js, MERN Stack </strong>and <strong className="text-white">.NET Core</strong>.
                     </p>
 
-                    <p className="text-zinc-400 text-lg leading-relaxed">
+                    <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                         My expertise extends into Semantic Computing and Natural Language Processing (NLP). Alongside my academic and research journey at the IYKONS Industry Research Park, I actively develop full-stack solutions, bridge language with computation, and engage in collaborative software development.
                     </p>
 

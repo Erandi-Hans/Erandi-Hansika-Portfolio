@@ -48,13 +48,13 @@ export default function Contact() {
 
     return (
 
-        <section id="contact" className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-20 border-t border-zinc-800/60 scroll-mt-36">
+        <section id="contact" className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-16 md:py-20 border-t border-zinc-800/60 scroll-mt-36">
             <div className="space-y-12">
 
                 {/* Section Title */}
                 <div className="space-y-3 max-w-3xl">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">Get In Touch</h2>
-                    <p className="text-zinc-400 text-lg leading-relaxed">
+                    <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
                         Have a project in mind, a question, or just want to connect? Feel free to reach out.
                     </p>
                 </div>
@@ -77,9 +77,9 @@ export default function Contact() {
                                 <div className="w-12 h-12 rounded-2xl bg-cyan-950/40 border border-cyan-800/40 flex items-center justify-center text-cyan-300 shrink-0">
                                     <MapPin size={22} stroke="#67e8f9" />
                                 </div>
-                                <div>
+                                <div className="overflow-hidden">
                                     <p className="text-xs text-zinc-400 font-medium">Address</p>
-                                    <p className="text-sm font-semibold text-white">No 135/1, Mahagalkadawala, Galgamuwa</p>
+                                    <p className="text-sm font-semibold text-white break-words">No 135/1, Mahagalkadawala, Galgamuwa</p>
                                 </div>
                             </div>
 
@@ -91,9 +91,9 @@ export default function Contact() {
                                 <div className="w-12 h-12 rounded-2xl bg-cyan-950/40 border border-cyan-800/40 flex items-center justify-center text-cyan-300 shrink-0">
                                     <Mail size={22} stroke="#67e8f9" />
                                 </div>
-                                <div>
+                                <div className="overflow-hidden">
                                     <p className="text-xs text-zinc-400 font-medium">Email Me</p>
-                                    <p className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">erandi2287hansika@gmail.com</p>
+                                    <p className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors break-all">erandi2287hansika@gmail.com</p>
                                 </div>
                             </a>
 
