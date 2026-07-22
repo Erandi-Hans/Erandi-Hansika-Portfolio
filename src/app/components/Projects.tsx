@@ -6,8 +6,8 @@ import Image from 'next/image';
 interface Project {
     title: string;
     description: string;
-    image: string;
-    category: 'React.js' | '.NET Core' | 'MERN' | 'Other';
+    image?: string;
+    categories: ('React.js' | '.NET Core' | 'MERN' | 'Next.js' | 'Python' | 'Other')[];
     githubUrl?: string;
     liveUrl?: string;
     tags: string[];
@@ -18,30 +18,90 @@ export default function Projects() {
 
     const projects: Project[] = [
         {
+            title: 'Erandi Hansika Portfolio',
+            description: 'My personal portfolio website showcasing my full-stack projects, research, and professional journey.',
+            image: '/img/project/portpolio.png',
+            categories: ['React.js', 'Next.js', 'Other'],
+            githubUrl: 'https://github.com/Erandi-Hans/Erandi-Hansika-Portfolio.git',
+            liveUrl: 'https://erandi-hansika-portfolio.vercel.app/',
+            tags: ['Next.js', 'TypeScript', 'Tailwind CSS']
+        },
+        {
+            title: 'SillaraAI',
+            description: 'An AI-powered platform with modern UI, robust state management, and seamless user experience.',
+            image: '/img/project/sillara1.png',
+            categories: ['MERN', 'React.js'],
+            githubUrl: 'https://github.com/Erandi-Hans/SillaraAI.git',
+            liveUrl: 'https://sillara-ai.vercel.app/',
+            tags: ['React.js', 'Node.js', 'MongoDB', 'Tailwind CSS']
+        },
+        {
             title: 'SkillPivotlk',
             description: 'A full-stack career platform designed for skill gap analysis, career recommendations, and professional guidance.',
-            image: '/img/projects/skillpivot.png',
-            category: 'MERN',
-            githubUrl: 'https://github.com/Erandi-Hans',
-            liveUrl: 'https://skillpivotlk.vercel.app',
-            tags: ['React.js', 'Node.js', 'MongoDB', 'Express']
+            image: '/img/project/skillp1.png',
+            categories: ['.NET Core', 'React.js', 'MERN'],
+            githubUrl: 'https://github.com/Erandi-Hans/SkillPivot-Frontend.git',
+            liveUrl: 'https://skill-pivot-frontend.vercel.app/',
+            tags: ['React.js', '.NET Core', 'SQL Server', 'Tailwind CSS']
         },
         {
             title: 'Kronix Agency',
             description: 'A professional agency landing page developed with scalable architecture, modern UI, and smooth animations.',
-            image: '/img/projects/kronix.png',
-            category: 'React.js',
-            githubUrl: 'https://github.com/Erandi-Hans',
-            liveUrl: 'https://kronix-agency.vercel.app',
+            image: '/img/project/kronix.png',
+            categories: ['React.js'],
+            githubUrl: 'https://github.com/Erandi-Hans/kronix-agency.git',
+            liveUrl: 'https://kronix-agency.vercel.app/',
             tags: ['React.js', 'Tailwind CSS', 'Vite']
         },
+        {
+            title: 'NLP Keyword Extractor (MiniLM & KeyBERT)',
+            description: 'Semantic computing research project focused on extracting accurate keywords from large documents using BERT and KeyBERT models.',
+            categories: ['Python', 'Other'],
+            githubUrl: 'https://github.com/Erandi-Hans/NLP-Keyword-Extractor-MiniLM-KeyBERT.git',
+            tags: ['Python', 'NLP', 'KeyBERT', 'Machine Learning']
+        },
+        {
+            title: 'Semantic Keyword Explorer (BERT/RoBERTa)',
+            description: 'Advanced semantic keyword explorer utilizing BERT and RoBERTa models for enhanced extraction accuracy.',
+            categories: ['Python', 'Other'],
+            githubUrl: 'https://github.com/Erandi-Hans/Semantic-Keyword-Explorer-BERT-RoBERTa-better-Accuracy--Colab.git',
+            tags: ['Python', 'BERT', 'RoBERTa', 'Google Colab']
+        },
+        {
+            title: 'Semantic Keyword Explorer (YAKE)',
+            description: 'Unsupervised automatic keyword extraction implementation using the YAKE algorithm in Google Colab.',
+            categories: ['Python'],
+            githubUrl: 'https://github.com/Erandi-Hans/Semantic-Keyword-Explorer-YAKE--Colabs.git',
+            tags: ['Python', 'YAKE', 'NLP', 'Colab']
+        },
+        {
+            title: 'Semantic Keyword Explorer (BERT Colab)',
+            description: 'Google Colab notebook implementation for exploring and extracting keywords via BERT embeddings.',
+            categories: ['Python'],
+            githubUrl: 'https://github.com/Erandi-Hans/Semantic-Keyword-Explorer-BERT-Colab.git',
+            tags: ['Python', 'BERT', 'NLP']
+        },
+        {
+            title: 'My Semantic Search Engine',
+            description: 'A custom-built semantic search engine prototype designed to retrieve contextually relevant information.',
+            categories: ['Python', 'Other'],
+            githubUrl: 'https://github.com/Erandi-Hans/my-semantic-search-engine.git',
+            tags: ['Python', 'Semantic Search', 'Information Retrieval']
+        },
+        {
+            title: 'Domain Similarity Search',
+            description: 'An intelligent similarity matching tool designed to compare and evaluate domain-specific texts and features.',
+            categories: ['Python'],
+            githubUrl: 'https://github.com/Erandi-Hans/Domain-Similarity-Search.git',
+            tags: ['Python', 'Data Analysis', 'Similarity Metrics']
+        }
     ];
 
     const filteredProjects = filter === 'All'
         ? projects
-        : projects.filter(p => p.category === filter);
+        : projects.filter(p => p.categories.includes(filter as any));
 
-    const categories = ['All', 'React.js', '.NET Core', 'MERN', 'Python', 'Other'];
+    const categories = ['All', 'React.js', 'Next.js', '.NET Core', 'MERN', 'Python', 'Other'];
 
     return (
         <section id="projects" className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-16 md:py-20 border-t border-zinc-800/60 scroll-mt-36">
@@ -80,15 +140,24 @@ export default function Projects() {
                                 className="bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-5 md:p-6 flex flex-col justify-between space-y-6 backdrop-blur-sm shadow-xl hover:border-cyan-500/40 transition-all group"
                             >
                                 <div className="space-y-4">
-                                    {/* Project Image */}
-                                    <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-700/80">
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    </div>
+                                    {/* Project Image or Fallback Header */}
+                                    {project.image ? (
+                                        <div className="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-700/80">
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                fill
+                                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="w-full h-40 sm:h-44 rounded-2xl bg-gradient-to-br from-cyan-950/60 to-zinc-900 border border-cyan-800/30 flex flex-col items-center justify-center p-6 text-center space-y-2">
+                                            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                                                <Code2 size={24} />
+                                            </div>
+                                            <span className="text-xs font-semibold text-cyan-300 uppercase tracking-wider">Research / Python Script</span>
+                                        </div>
+                                    )}
 
                                     {/* Title & Description */}
                                     <div className="space-y-2">
