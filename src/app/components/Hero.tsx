@@ -21,7 +21,7 @@ export default function Hero() {
         return () => clearInterval(timer);
     }, []);
     return (
-        <section className="w-full max-w-[1600px]  mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-[85vh] py-12">
+        <section className="w-full max-w-[1600px] pb-12 mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center min-h-[85vh] py-12">
             {/* Text Content */}
             <div className="space-y-6">
 
@@ -48,7 +48,7 @@ export default function Hero() {
 
                 {/* Social Links with Original Brand Colors on Hover */}
 
-                <div className="gap-4 pt-2 flex pb-12">
+                <div className="gap-4 pt-2 flex ">
                     <a href="https://github.com/Erandi-Hans" target="_blank" className="p-3 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-300 hover:text-white hover:border-[#333] hover:bg-[#333]/20 transition">
                         <FaGithub size={20} />
                     </a>
