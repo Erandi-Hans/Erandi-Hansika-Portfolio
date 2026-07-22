@@ -13,7 +13,7 @@ export default function About() {
 
                         <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto overflow-hidden rounded-full border border-zinc-800">
                             <Image
-                                src="/img/pl1.jpeg"
+                                src="/img/pI1.jpeg"
                                 alt="G.M. Erandi Hansika"
                                 fill
                                 className="object-cover"
