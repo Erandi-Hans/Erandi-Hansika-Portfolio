@@ -1,22 +1,26 @@
 'use client';
 import { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare } from 'lucide-react';
-import emailjs from '@emailjs/browser'; // ඊමේල් යැවීම සක්‍රීය කිරීමට (npm i @emailjs/browser දාගන්න)
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const formRef = useRef<HTMLFormElement>(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsLoading(true);
+        setErrorMessage('');
 
-        // මෙතැනදී EmailJS හරහා සැබෑ ලෙසම ඊමේල් එකක් ඔබේ ජීමේල් එකට ලැබීමට සස්කළ හැක.
-        // ඔබ EmailJS ගිණුමක් හැදූ පසු පහත කෝඩ් එකේ Service ID, Template ID, Public Key දාන්න.
-        /*
         if (formRef.current) {
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
+            emailjs.sendForm(
+                'service_r0gteng',      // Service ID
+                'template_ipp26e6',     // මෙතැනට ඔබේ EmailJS Template ID එක දාන්න (උදා: template_abc123)
+                formRef.current,
+                '298bmylPAcVcmVYRC'     // Public Key එක මෙහි ඇතුළත් කර ඇත
+            )
                 .then((result) => {
                     setIsSubmitted(true);
                     setIsLoading(false);
@@ -25,17 +29,9 @@ export default function Contact() {
                 }, (error) => {
                     console.log(error.text);
                     setIsLoading(false);
+                    setErrorMessage('Failed to send message. Please try again later.');
                 });
         }
-        */
-
-        // දැනට සිමියුලේෂන් එකක් ලෙස (EmailJS configure කරන තුරු වැඩ කිරීමට):
-        setTimeout(() => {
-            setIsSubmitted(true);
-            setIsLoading(false);
-            if (formRef.current) formRef.current.reset();
-            setTimeout(() => setIsSubmitted(false), 5000);
-        }, 1500);
     };
 
     return (
@@ -74,7 +70,7 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            {/* Email (Clickable to open mail client) */}
+                            {/* Email */}
                             <a
                                 href="mailto:erandi2287hansika@gmail.com"
                                 className="flex items-center gap-4 p-4 bg-zinc-900/80 border border-zinc-800/80 hover:border-cyan-500/50 rounded-2xl transition-all group"
@@ -88,7 +84,7 @@ export default function Contact() {
                                 </div>
                             </a>
 
-                            {/* Normal Call (Clickable to dial) */}
+                            {/* Normal Call */}
                             <a
                                 href="tel:+94785059129"
                                 className="flex items-center gap-4 p-4 bg-zinc-900/80 border border-zinc-800/80 hover:border-cyan-500/50 rounded-2xl transition-all group"
@@ -102,7 +98,7 @@ export default function Contact() {
                                 </div>
                             </a>
 
-                            {/* WhatsApp (Clickable to chat directly) */}
+                            {/* WhatsApp */}
                             <a
                                 href="https://wa.me/94760709264"
                                 target="_blank"
@@ -144,7 +140,7 @@ export default function Contact() {
                                         <label className="block text-xs font-medium text-zinc-300 mb-1.5">Your Name</label>
                                         <input
                                             type="text"
-                                            name="user_name"
+                                            name="from_name"
                                             required
                                             placeholder="John Doe"
                                             className="w-full px-4 py-3 bg-zinc-900/80 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-500/60 text-sm transition-all"
@@ -155,7 +151,7 @@ export default function Contact() {
                                         <label className="block text-xs font-medium text-zinc-300 mb-1.5">Your Email</label>
                                         <input
                                             type="email"
-                                            name="user_email"
+                                            name="from_email"
                                             required
                                             placeholder="john@example.com"
                                             className="w-full px-4 py-3 bg-zinc-900/80 border border-zinc-800 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-500/60 text-sm transition-all"
@@ -173,6 +169,10 @@ export default function Contact() {
                                         />
                                     </div>
                                 </div>
+
+                                {errorMessage && (
+                                    <p className="text-xs text-rose-400">{errorMessage}</p>
+                                )}
 
                                 <button
                                     type="submit"
